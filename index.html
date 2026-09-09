@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loan approval eligibility checker powered by a support vector classifier.">
+  <title>Verdict | Loan Eligibility</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Verdict home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>VERDICT</span>
+      </a>
+      <nav class="api-status" style="gap:20px;">
+        <a href="/dashboard.html" style="color:inherit;text-decoration:none;letter-spacing:.12em;">MODEL DASHBOARD ↗</a>
+        <span><span class="status-dot" aria-hidden="true"></span>MODEL ONLINE</span>
+      </nav>
+    </header>
+
+    <main class="main-grid">
+      <section class="intro-panel" aria-labelledby="page-title">
+        <p class="eyebrow">LOAN DECISION ENGINE <span>•</span> SVC-01</p>
+        <h1 id="page-title">Make the next<br><em>move</em> with clarity.</h1>
+        <p class="intro-copy">A quick, transparent eligibility check for the decisions that matter. Add the applicant details and let the model read the signal.</p>
+        <div class="signal-card" aria-label="How the decision is made">
+          <div class="signal-card-top"><span class="signal-label">DECISION SIGNAL</span><span class="signal-code">LIVE / 01</span></div>
+          <div class="signal-graphic" aria-hidden="true">
+            <span class="signal-line signal-line-one"></span>
+            <span class="signal-line signal-line-two"></span>
+            <span class="signal-point"></span>
+            <span class="signal-axis"></span>
+          </div>
+          <div class="signal-card-bottom"><span>INPUT → MODEL</span><strong>RESULT</strong></div>
+        </div>
+        <p class="fine-print">Built for a fast first read. This result is an estimate, not a lending commitment.</p>
+      </section>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <div class="form-heading">
+          <div>
+            <p class="section-kicker">01 / APPLICATION</p>
+            <h2 id="form-title">Tell us about<br>the request.</h2>
+          </div>
+          <span class="required-note">* REQUIRED</span>
+        </div>
+
+        <form id="loan-form" novalidate>
+          <div class="field-grid">
+            <label class="field">
+              <span>Applicant income <small>ANNUAL / $</small></span>
+              <input type="number" name="ApplicantIncome" min="0" step="1" placeholder="e.g. 7700" required>
+            </label>
+            <label class="field">
+              <span>Coapplicant income <small>ANNUAL / $</small></span>
+              <input type="number" name="CoapplicantIncome" min="0" step="1" placeholder="e.g. 1400" required>
+            </label>
+            <label class="field">
+              <span>Requested loan amount <small>IN $ THOUSANDS</small></span>
+              <input type="number" name="LoanAmount" min="0" step="1" placeholder="e.g. 150" required>
+            </label>
+            <label class="field">
+              <span>Loan term <small>MONTHS</small></span>
+              <input type="number" name="Loan_Amount_Term" min="1" step="1" placeholder="e.g. 360" required>
+            </label>
+            <label class="field">
+              <span>Credit history <small>REPAYMENT RECORD</small></span>
+              <select name="Credit_History" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">Exists (1)</option>
+                <option value="0">Does not exist (0)</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Self employed <small>WORK STATUS</small></span>
+              <select name="Self_Employed" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </label>
+            <label class="field field-wide">
+              <span>Education <small>QUALIFICATION</small></span>
+              <select name="Education" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <p class="form-hint"><span aria-hidden="true">↳</span> Your details stay in this session.</p>
+            <button type="submit" id="submit-button"><span class="button-text">Check Loan Eligibility</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+
+        <div id="result" class="result" role="status" aria-live="polite" hidden>
+          <div class="result-icon" aria-hidden="true"></div>
+          <div><span class="result-kicker">MODEL RESPONSE</span><h3 id="result-title"></h3><p id="result-detail"></p></div>
+          <button type="button" class="dismiss-button" id="dismiss-result" aria-label="Dismiss result">×</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>VERDICT / ELIGIBILITY CHECK</span><span>POWERED BY YOUR SVC MODEL <i></i></span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

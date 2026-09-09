@@ -1,0 +1,321 @@
+{
+  "features": {
+    "numeric_median_fill": [
+      "CoapplicantIncome",
+      "ApplicantIncome",
+      "LoanAmount"
+    ],
+    "numeric_mode_fill": [
+      "Credit_History",
+      "Loan_Amount_Term"
+    ],
+    "categorical": [
+      "Self_Employed",
+      "Education"
+    ],
+    "all": [
+      "CoapplicantIncome",
+      "ApplicantIncome",
+      "LoanAmount",
+      "Credit_History",
+      "Loan_Amount_Term",
+      "Self_Employed",
+      "Education"
+    ]
+  },
+  "target": "Loan_Status",
+  "classes": [
+    "N",
+    "Y"
+  ],
+  "model_info": {
+    "algorithm": "SVC (Support Vector Classifier)",
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale",
+    "decision_function_shape": "ovr",
+    "total_support_vectors": 248,
+    "support_vectors_per_class": {
+      "N": 112,
+      "Y": 136
+    },
+    "trained_on": "2026-09-09 20:24",
+    "train_rows": 491,
+    "test_rows": 123
+  },
+  "metrics": {
+    "accuracy": 0.8455,
+    "confusion_matrix": [
+      [
+        20,
+        18
+      ],
+      [
+        1,
+        84
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "N",
+      "Y"
+    ],
+    "classification_report": {
+      "N": {
+        "precision": 0.9523809523809523,
+        "recall": 0.5263157894736842,
+        "f1-score": 0.6779661016949152,
+        "support": 38.0
+      },
+      "Y": {
+        "precision": 0.8235294117647058,
+        "recall": 0.9882352941176471,
+        "f1-score": 0.8983957219251337,
+        "support": 85.0
+      },
+      "accuracy": 0.8455284552845529,
+      "macro avg": {
+        "precision": 0.8879551820728291,
+        "recall": 0.7572755417956656,
+        "f1-score": 0.7881809118100245,
+        "support": 123.0
+      },
+      "weighted avg": {
+        "precision": 0.8633372048006195,
+        "recall": 0.8455284552845529,
+        "f1-score": 0.8302955140491314,
+        "support": 123.0
+      }
+    }
+  },
+  "margins_on_test_set": [
+    -1.036592009130528,
+    0.9969460780675445,
+    1.0046501710281075,
+    0.9992435155639211,
+    0.9848102768194267,
+    0.9986377282291381,
+    1.0116721830975202,
+    1.001568800582068,
+    1.0012293636023792,
+    1.0122483841238046,
+    1.003789818707454,
+    0.9726218242762269,
+    1.000100181480005,
+    0.9997732122300617,
+    -1.0740421713401713,
+    -1.1006037310023467,
+    0.3957048934619045,
+    -1.025229883378791,
+    -1.056044029165058,
+    0.9902242564155023,
+    -1.048819993794742,
+    0.9882511012305412,
+    0.24966230740272916,
+    0.9978722482014719,
+    1.0040135046151426,
+    1.073909290044669,
+    1.0804224083262235,
+    0.5191181624024666,
+    -1.0075405357454694,
+    1.005719204999962,
+    1.0019506439281542,
+    0.9935986402806104,
+    1.01260751011116,
+    1.004572843067935,
+    0.9097776156608921,
+    0.9540702113165557,
+    -1.0180295576060776,
+    1.0735676243549337,
+    0.9997270509890953,
+    1.0054832903490702,
+    1.004362297410555,
+    1.0170215156683886,
+    0.9919266107619812,
+    0.9957463011656894,
+    1.0033163244537073,
+    1.0038103283888593,
+    1.0004610277207582,
+    0.886392268722269,
+    0.9792369878463674,
+    1.004586052424302,
+    -1.088548086248882,
+    1.0073835398441824,
+    -1.0963636978780373,
+    1.0170227192024606,
+    1.0152038089085411,
+    0.9953630420672062,
+    -0.9823629808561359,
+    0.9925622104784555,
+    0.942611464091237,
+    1.0115698087721432,
+    -0.9759230682701302,
+    0.9561591978828456,
+    1.0002781533556453,
+    1.0010038549585683,
+    0.9975220882439023,
+    0.9860743994267372,
+    0.9999813818919058,
+    1.0089335299301438,
+    0.7942990471223417,
+    0.8944399064037637,
+    1.0036098867966796,
+    -0.966303889747563,
+    1.0018440052026096,
+    0.9999829901409966,
+    1.0004922216053007,
+    1.0017976228508103,
+    1.0032225419974248,
+    1.0845638668852882,
+    1.173452796737005,
+    -0.8433789928922998,
+    -1.0660197954925033,
+    1.000751237236143,
+    0.9852853408818506,
+    1.0018125594577185,
+    1.0009013390207078,
+    1.055386624868134,
+    1.0049818136330289,
+    0.997220944913574,
+    0.9960625275793596,
+    0.9979787107663489,
+    1.0234784962120722,
+    -0.9897963082899625,
+    -1.0119962729383811,
+    1.0009688801419978,
+    0.9988220112880614,
+    0.999895955026234,
+    -0.831517258846474,
+    0.8999887058300282,
+    1.1365474728291822,
+    1.0002866250249478,
+    1.0001298094716513,
+    1.0009433799559675,
+    0.9569962276905573,
+    1.004172041321064,
+    1.0792320826212571,
+    1.0017659486909287,
+    0.04560183576552737,
+    0.9862553086724171,
+    1.0031232608362313,
+    1.0257039299800068,
+    1.0060763534719757,
+    1.000901411081638,
+    1.0039985178216122,
+    0.9970756731490109,
+    1.005111631888047,
+    0.9927983742910884,
+    1.006851832987837,
+    0.9740349072654547,
+    0.9886170148367436,
+    -1.0979121204082287,
+    -1.0688811681957877,
+    1.0001606494103363,
+    -0.9090503277987668
+  ],
+  "samples": [
+    {
+      "CoapplicantIncome": 0.0,
+      "ApplicantIncome": 5849,
+      "LoanAmount": null,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 1508.0,
+      "ApplicantIncome": 4583,
+      "LoanAmount": 128.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "N"
+    },
+    {
+      "CoapplicantIncome": 0.0,
+      "ApplicantIncome": 3000,
+      "LoanAmount": 66.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "Yes",
+      "Education": "Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 2358.0,
+      "ApplicantIncome": 2583,
+      "LoanAmount": 120.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Not Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 0.0,
+      "ApplicantIncome": 6000,
+      "LoanAmount": 141.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 4196.0,
+      "ApplicantIncome": 5417,
+      "LoanAmount": 267.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "Yes",
+      "Education": "Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 1516.0,
+      "ApplicantIncome": 2333,
+      "LoanAmount": 95.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Not Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 2504.0,
+      "ApplicantIncome": 3036,
+      "LoanAmount": 158.0,
+      "Credit_History": 0.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "N"
+    },
+    {
+      "CoapplicantIncome": 1526.0,
+      "ApplicantIncome": 4006,
+      "LoanAmount": 168.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "Y"
+    },
+    {
+      "CoapplicantIncome": 10968.0,
+      "ApplicantIncome": 12841,
+      "LoanAmount": 349.0,
+      "Credit_History": 1.0,
+      "Loan_Amount_Term": 360.0,
+      "Self_Employed": "No",
+      "Education": "Graduate",
+      "Loan_Status": "N"
+    }
+  ],
+  "model_file": {
+    "name": "svm_pipeline_model.pkl",
+    "size_kb": 25.38
+  }
+}
