@@ -21,7 +21,10 @@
     <section class="lower"><aside class="feature-panel"><div class="panel-head"><h2>Signals in the model</h2><span class="count" id="featureCount">-- fields</span></div><div class="features" id="features"></div></aside><section class="sample-panel"><div class="panel-head"><h2>Dataset samples</h2><span class="count" id="marginCount">-- margins</span></div><div class="table-wrap"><table><thead><tr><th>Applicant income</th><th>Loan amount</th><th>Education</th><th>Self employed</th><th>Decision</th></tr></thead><tbody id="samples"></tbody></table></div></section></section>
   </main>
   <script>
-    const apiBase = window.location.protocol === 'file:' ? 'http://127.0.0.1:5000' : '';
+    const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+    const apiBase = window.location.protocol === 'file:' || (isLocalHost && window.location.port !== '5000')
+      ? 'http://127.0.0.1:5000'
+      : '';
     const api = url => fetch(apiBase + url).then(async response => { const data = await response.json().catch(() => ({})); if (!response.ok) throw new Error(data.message || data.error || 'The system is initializing, please wait.'); return data; });
     Promise.all(['/model/info','/model/features','/model/metrics','/model/samples'].map(api))
       .then(([info, features, metrics, samples]) => {

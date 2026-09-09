@@ -8,7 +8,8 @@ const dismissResult = document.querySelector("#dismiss-result");
 // כתובת יחסית: עובדת גם מקומית (השרת מגיש גם את index.html וגם את ה-API
 // מאותו origin) וגם אחרי פריסה לאינטרנט (למשל Render) - בלי לקבע 127.0.0.1.
 // אם הדף נפתח כקובץ מקומי (file://) עדיין נצטרך את הכתובת המלאה.
-const API_URL = window.location.protocol === "file:"
+const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const API_URL = window.location.protocol === "file:" || (isLocalHost && window.location.port !== "5000")
   ? "http://127.0.0.1:5000/model/predict"
   : "/model/predict";
 
