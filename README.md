@@ -4,11 +4,20 @@
 Vector Classifier)** בתוך `Pipeline` (עיבוד מקדים + מודל), עם REST API
 ב-Flask ושני דפי אתר.
 
+## התאמה לשלבי ההגשה (לפי קובץ ההנחיות)
+
+| שלב בהנחיות | קבצים רלוונטיים | הערה |
+|---|---|---|
+| **שלב 1 – אימון המודל** | `STEP1_original_notebook.ipynb` (העבודה המקורית, ב-Jupyter) + `train_model.py` (הגרסה המתקדמת שבפועל רצה בפרויקט הסופי, עם `ColumnTransformer` לטיפול אוטומטי בערכים חסרים וקידוד קטגוריות) | שני הקבצים מאמנים את **אותו** מודל SVC ומגיעים לאותה דיוק (0.8455). ה-notebook הוא נקודת ההתחלה; `train_model.py` הוא הגרסה שמשולבת בפועל עם השרת. |
+| **שלב 2 – דף נתוני המודל** | `model.py` (פונקציות Python שחושפות את נתוני המודל) + `app.py` (ה-REST API: `/model/info`, `/model/features`, `/model/samples`, `/model/metrics`, `/model/margins`) + `dashboard.html` (הדף המוצג בכתובת `/dashboard.html`) | |
+| **שלב 3 – טופס משתמש + Predict** | `index.html` + `app.js` + `styles.css` (הטופס, בכתובת `/`) + `app.py` (`/model/predict`) + `model.py` (`predict_loan_status`) | |
+
 ## מבנה הפרויקט
 
 | קובץ                     | תיאור                                                              |
 |--------------------------|---------------------------------------------------------------------|
-| `train_model.py`         | שלב 1 – מאמן את המודל, שומר `svm_pipeline_model.pkl` ו-`model_metadata.json` |
+| `STEP1_original_notebook.ipynb` | שלב 1 (מקורי) – ה-Jupyter notebook הראשוני, בו נבחרו הפיצ'רים ואומן המודל לראשונה |
+| `train_model.py`         | שלב 1 (סופי) – מאמן את המודל, שומר `svm_pipeline_model.pkl` ו-`model_metadata.json` |
 | `model.py`                | שכבת גישה למודל: טעינה, שליפת נתונים, ופונקציית `predict_loan_status` |
 | `app.py`                  | שרת Flask יחיד – חושף את כל ה-REST API ומגיש את שני דפי ה-HTML     |
 | `index.html` + `app.js` + `styles.css` | שלב 3 – טופס בדיקת זכאות להלוואה (הדף הראשי, `/`)         |
